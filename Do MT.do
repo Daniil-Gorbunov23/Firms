@@ -1,11 +1,9 @@
 
 
-
 gen TFP = (TFPgap + 1)^(-1) * TFP_e
 
 clear
 
-1+1
 
 reg TFPgap TFP_e
 
