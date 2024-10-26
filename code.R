@@ -10,7 +10,12 @@ dataset_dttbl <-
 
 dataset_dttbl|> names()
 
+
 #keep y k l18 sector year okato_regioncode services manuf
 
 dataset_tbl |> 
-  select(y_gr18, m18, k18, l18, year, okato_regioncode, services, manuf)
+  select(y_gr18, m18, k18, l18,sector18, year, okato_regioncode, services, manuf)
+
+
+dataset_dttbl$okved4
+
