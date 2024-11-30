@@ -19,3 +19,18 @@ dataset_tbl |>
 
 dataset_dttbl$okved4
 
+
+library(dplyr)
+library(dbplyr)
+
+con <- DBI::dbConnect(RSQLite::SQLite(), ":memory:")
+copy_to(con, mtcars)
+mtcars2 <- tbl(con, "mtcars")
+
+summary <- mtcars2 %>% 
+  group_by(cyl) %>% 
+  summarise(mpg = mean(mpg, na.rm = TRUE)) %>% 
+  arrange(desc(mpg))
+
+
+summary %>% collect()
